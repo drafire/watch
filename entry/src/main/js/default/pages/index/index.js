@@ -10,5 +10,11 @@ export default {
         router.replace({
             uri: "pages/pratice/pratice"
         });
+    },
+    pvChange1(pv) {
+        console.log("左边选中:" + pv.newValue); /*这里注意，是newValue  注释的快捷键是shift+l*/
+    },
+    pvChange2(pv) {
+        console.log("右边选中:" + pv.newValue);
     }
 }
