@@ -7,16 +7,18 @@ export default {
             uri: "pages/index/index"
         });
     },
-    onInit(){
-        console.log("练习页面初始化了...")
+    onInit() {
+        console.log("练习页面初始化了...");
+        console.log("接收到左边项：" + this.time);
+        console.log("接收到右边项：" + this.type);
     },
-    onReady(){
+    onReady() {
         console.log("练习页面准备好了...")
     },
-    onShow(){
+    onShow() {
         console.log("练习页面展示...")
     },
-    onDestroy(){
+    onDestroy() {
         console.log("练习页面销毁...")
     }
 }
