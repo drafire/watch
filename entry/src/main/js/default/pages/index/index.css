@@ -9,6 +9,9 @@
 .btn {
     width: 200px;
     height: 50px;
+    font-size: 38px;/*运动手表的font-size只有30px、38px*/
+    background-color: #000000;  /*背景颜色*/
+    border-color: #000000;     /*边框颜色*/
 }
 
 .img {

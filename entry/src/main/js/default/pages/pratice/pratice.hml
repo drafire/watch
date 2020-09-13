@@ -1,6 +1,6 @@
 <div class="container">
-    <text class="title">
-        训练页面
+    <text class="title" show="{{isShow}}">
+        再坚持{{seconds}}秒
     </text>
-    <input type="button" class="btn" value="返回" onclick="clickAction"></input>
+    <input type="button" class="btn" value="点击重新开始" onclick="clickAction"></input>
 </div>

@@ -9,5 +9,5 @@
         <!--    <image src="/image/hm.png" class="img"></image>  -->
         <picker-view class="pv2" range="{{pikcer2range}}" selected="1" onchange="pvChange2"/>
     </div>
-    <input type="button" class="btn" value="点我" onclick="clickAction"></input>
+    <input type="button" class="btn" value="点击开始" onclick="clickAction"></input>
 </div>
