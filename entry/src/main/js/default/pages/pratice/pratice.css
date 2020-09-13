@@ -5,7 +5,7 @@
     width: 454px;
     height: 454px;
 }
-.title {
+.txt {
     font-size: 30px;
     text-align: center;
     width: 400px;
@@ -19,4 +19,11 @@
     border-color: #000000;
     font-size: 38px;
     margin-top: 40px;
+}
+.action {
+    font-size: 38px;
+    text-align: center;
+    width: 454px;
+    height: 40px;
+    margin-bottom: 10px;
 }

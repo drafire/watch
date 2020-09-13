@@ -1,5 +1,7 @@
 <div class="container">
-    <text class="title" show="{{isShow}}">
+    <text class="action" show="{{actionIsShow}}">{{action}}
+    </text>
+    <text class="txt" show="{{txtIsShow}}">
         再坚持{{seconds}}秒
     </text>
     <input type="button" class="btn" value="点击重新开始" onclick="clickAction"></input>
