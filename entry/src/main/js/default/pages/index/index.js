@@ -11,7 +11,7 @@ export default {
     clickAction() {
         console.log("主页被点击了...");
         router.replace({
-            uri: "pages/pratice/pratice",
+            uri: "pages/countDown/countDown",
             params: {
                 "time": time,
                 "type": type

@@ -33,7 +33,8 @@
       {
         "pages": [
           "pages/index/index",
-          "pages/pratice/pratice"
+          "pages/pratice/pratice",
+          "pages/countDown/countDown"
         ],
         "name": "default"
       }
