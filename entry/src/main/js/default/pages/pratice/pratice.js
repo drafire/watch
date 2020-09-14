@@ -28,12 +28,14 @@ export default {
         console.log("接收到右边项：" + this.type);
         time = this.time; // 注意这里的写法，这里的time赋值。总结起来，如果是data 动态绑定的值，需要使用this.的写法，其他不需要
         type = this.type;
-        this.seconds = time * 30;
-        totalSeconds = time * 30;
+        this.seconds = time * 60;
+        totalSeconds = time * 60;
         //设置切换的时间
         interval = type == "较慢" ? 6 : type == "舒服" ? 4 : 2;
         console.log("切换内容时间间隔为" + interval + "秒");
         console.log("一共要切换" + totalSeconds / interval + "次");
+        this.duration = interval + "s"; //注意，这里有个s的，用于表示秒
+        this.count = Math.ceil(totalSeconds / interval) + "";   //这里这样写，用于防止totalSeconds / interval 出现小数
     },
     onReady() {
         console.log("练习页面准备好了...")
@@ -54,7 +56,9 @@ export default {
         txtIsShow: true,
         action: "吸气",
         actionIsShow: true,
-        percent: "0"
+        percent: "0",
+        duration: "",
+        count: ""
     }
 
 ,
