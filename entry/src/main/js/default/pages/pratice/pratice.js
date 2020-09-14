@@ -2,11 +2,12 @@ import router from "@system.router"
 
 var time = 0;
 var type = null;
-var leftSecondsTimer = null;
-var contentTimer = null;
+var leftSecondsTimer = null; //剩余秒数定时器
+var contentTimer = null; //内容切换定时器
 var interval = null; //呼吸切换时间间隔
 var counter = 0; //呼吸切换次数
 var totalSeconds = 0; //训练的时间
+var runPercentTimer = null;
 
 export default {
     clickAction() {
@@ -15,6 +16,8 @@ export default {
         leftSecondsTimer = null;
         clearInterval(contentTimer);
         contentTimer = null;
+        clearInterval(runPercentTimer);
+        runPercentTimer = null;
         router.replace({
             uri: "pages/index/index"
         });
@@ -40,6 +43,8 @@ export default {
         leftSecondsTimer = setInterval(this.runTime,1000); //注意这里调用函数的写法，是使用this.runTime
         //开启一个定时器，用于切换内容
         contentTimer = setInterval(this.runContent,interval * 1000); //每隔interval秒切换一次内容
+        //开启定时器，用于百分比
+        runPercentTimer = setInterval(this.runPercent,interval / 100 * 1000); //i
     },
     onDestroy() {
         console.log("练习页面销毁...")
@@ -48,7 +53,8 @@ export default {
         seconds: 0,
         txtIsShow: true,
         action: "吸气",
-        actionIsShow: true
+        actionIsShow: true,
+        percent: "0"
     }
 
 ,
@@ -64,13 +70,29 @@ export default {
     runContent() {
         counter++;
         console.log("已经切换" + counter + "次");
-        if (counter == totalSeconds / interval) {
+        if (counter >= totalSeconds / interval) { //这里使用>=，因为totalSeconds / interval可能会产生小数
             console.log("训练完成");
             this.action = "训练完成";
             clearInterval(contentTimer);
             contentTimer = null;
         } else {
             this.action = this.action == "呼气" ? "吸气" : "呼气";
+        }
+    },
+    runPercent() {
+        this.percent = (parseInt(this.percent) + 1).toString();
+        if (parseInt(this.percent) < 10) { //10%
+            this.percent = "0" + this.percent;
+        }
+        if (parseInt(this.percent) == 100) { //100%
+            //这里100%，不代表这个定时器已经执行完
+            this.percent = "0";
+        }
+        if (null == contentTimer) {
+            clearInterval(runPercentTimer);
+            runPercentTimer = null;
+            //这里要将百分比设置为100%，否则会显示一些奇奇怪怪的值
+            this.percent = "100";
         }
     }
 }
