@@ -15,7 +15,7 @@ export default {
     run() {
         counter = counter - 1;
         if (counter != 0) {
-            this.imgsrc = "../image/" + counter.toString() + ".png";
+            this.imgsrc = "/pages/image/" + counter.toString() + ".png";
             this.seconds = counter.toString();
         } else {
             this.imgsrc = "";
@@ -34,7 +34,7 @@ export default {
         pv1 = this.data1;
         pv2 = this.data2;
 
-        this.imgsrc = "../image/" + counter.toString() + ".png";
+        this.imgsrc = "/pages/image/" + counter.toString() + ".png";
         this.seconds = counter.toString();
     },
     onShow() {

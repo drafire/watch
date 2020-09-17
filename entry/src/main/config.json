@@ -34,7 +34,8 @@
         "pages": [
           "pages/index/index",
           "pages/pratice/pratice",
-          "pages/countDown/countDown"
+          "pages/countDown/countDown",
+          "pages/test/test"
         ],
         "name": "default"
       }
